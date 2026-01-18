@@ -1,5 +1,14 @@
-RaccattaMonitor Game!
+### **About the Game**
+**RaccattaMonitor Game** is a fast-paced indie experience developed using the **Godot Engine**. 
 
-RaccattaMonitor Game is a game developed in Godot! Collect monitors and slowly climb the corporate ladder! Will you manage to become the CEO? Play it online here:
+You start at the bottom, but the sky is the limit! Your mission is simple:
+* 📦 **Collect** as many monitors as you can
+* 📈 **Climb** the corporate ladder through hard work
+* 🏆 **Reach the Top:** Will you have what it takes to become the **CEO**?
 
-https://enricotomasi.github.io/RaccattaMonitor/
+### 🎮 **Play it now!**
+The game is available to play directly in your browser:
+👉 **[Click here to play RaccattaMonitor](https://enricotomasi.github.io/RaccattaMonitor/)**
+
+---
+_Developed with ❤️ Goodot!
