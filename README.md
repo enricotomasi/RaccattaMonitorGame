@@ -11,4 +11,4 @@ The game is available to play directly in your browser:
 👉 **[Click here to play RaccattaMonitor](https://enricotomasi.github.io/RaccattaMonitor/)**
 
 ---
-_Developed with ❤️ Goodot!
+Developed with ❤️ Goodot!
