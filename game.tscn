@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://elst0xn32iil"]
+
+[ext_resource type="Texture2D" uid="uid://dq4bwlspcs8x4" path="res://sprites/TT.png" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://4sqqge0j2n2u" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bmbavslted515" path="res://sanpresenzio.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://djf7keuxeyyoh" path="res://ui.tscn" id="3_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://cjh7qg2bl2obd" path="res://audio/RaccattaMonitorSong.mp3" id="5_7jktm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
+size = Vector2(128, 809)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
+size = Vector2(333, 855)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
+size = Vector2(1280, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(1376, 380)
+
+[node name="Game" type="Node"]
+script = ExtResource("1_feb5d")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -110.99999
+offset_right = 378.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("1_80nbo")
+
+[node name="UI" parent="Background" instance=ExtResource("3_fc0e3")]
+light_mask = 8
+visibility_layer = 15
+layout_mode = 1
+offset_left = 18.181818
+offset_top = 150.64937
+offset_right = 0.3635254
+offset_bottom = 0.67529297
+
+[node name="SanPresenzio" parent="." instance=ExtResource("2_e2o6t")]
+light_mask = 2
+visibility_layer = 4
+position = Vector2(26, 133)
+
+[node name="Borders" type="Node2D" parent="."]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-106, 291.5)
+shape = SubResource("RectangleShape2D_e2o6t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(1332, 315.5)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(585, -162)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(592, 851)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Monitors" type="Node2D" parent="."]
+light_mask = 4
+visibility_layer = 2
+
+[node name="MonitorGenerator" type="Timer" parent="."]
+autostart = true
+
+[node name="RaccattaMonitorMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7jktm")
+volume_db = -2.252
+autoplay = true
+
+[connection signal="timeout" from="MonitorGenerator" to="." method="_on_monitor_generator_timeout"]

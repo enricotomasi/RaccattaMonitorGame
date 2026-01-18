@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://djf7keuxeyyoh"]
+
+[ext_resource type="Script" uid="uid://tm3tng57twac" path="res://ui.gd" id="1_fyqef"]
+[ext_resource type="FontFile" uid="uid://dbh60bexjwyrt" path="res://fonts/RaccattaMonitorFont.ttf" id="2_m6e0p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fyqef"]
+font = ExtResource("2_m6e0p")
+font_size = 41
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 7
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyqef")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -571.0
+offset_top = 10.0
+offset_right = 571.0
+offset_bottom = 67.0
+grow_horizontal = 2
+text = "RaccattaMonitor"
+label_settings = SubResource("LabelSettings_fyqef")
+horizontal_alignment = 1

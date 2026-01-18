@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ryuddljgllj6"]
+
+[ext_resource type="Script" uid="uid://crd8xpu6allsf" path="res://monitor.gd" id="1_fa1fk"]
+[ext_resource type="Texture2D" uid="uid://xod1yas85o4m" path="res://sprites/monitors/01.png" id="2_8qdrl"]
+[ext_resource type="AudioStream" uid="uid://cfy5gje7cgy74" path="res://audio/perso.mp3" id="3_xk0nc"]
+[ext_resource type="AudioStream" uid="uid://co827updrvb6a" path="res://audio/raccattato.mp3" id="4_6dhw4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fa1fk"]
+size = Vector2(98, 85)
+
+[node name="Monitor" type="Area2D"]
+script = ExtResource("1_fa1fk")
+
+[node name="mon" type="Sprite2D" parent="."]
+position = Vector2(63, 53)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("2_8qdrl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(65, 54)
+shape = SubResource("RectangleShape2D_fa1fk")
+
+[node name="AudioMonitorPerso" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xk0nc")
+volume_db = 12.116
+
+[node name="AudioMonitorRaccattato" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6dhw4")
+volume_db = 2.019
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
