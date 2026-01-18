@@ -10,5 +10,9 @@ You start at the bottom, but the sky is the limit! Your mission is simple:
 The game is available to play directly in your browser:
 👉 **[Click here to play RaccattaMonitor](https://enricotomasi.github.io/RaccattaMonitor/)**
 
+## 🎮 Play on itch.io
+You can also find this game on my itch.io page: 
+[RaccattaMonitor on itch.io](https://reverseproxy.itch.io/raccattamonitor)
+
 ---
 Developed with ❤️ Goodot!
