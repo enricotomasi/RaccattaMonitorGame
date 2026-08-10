@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://elst0xn32iil"]
+[gd_scene load_steps=11 format=3 uid="uid://elst0xn32iil"]
 
 [ext_resource type="Texture2D" uid="uid://dq4bwlspcs8x4" path="res://sprites/TT.png" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://4sqqge0j2n2u" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://bmbavslted515" path="res://sanpresenzio.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://djf7keuxeyyoh" path="res://ui.tscn" id="3_fc0e3"]
+[ext_resource type="Script" uid="uid://dwk5quaigqc8x" path="res://canvas_layer_hud.gd" id="4_ryrav"]
 [ext_resource type="AudioStream" uid="uid://cjh7qg2bl2obd" path="res://audio/RaccattaMonitorSong.mp3" id="5_7jktm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
@@ -42,6 +43,22 @@ offset_left = 18.181818
 offset_top = 150.64937
 offset_right = 0.3635254
 offset_bottom = 0.67529297
+
+[node name="CanvasLayer_HUD" type="CanvasLayer" parent="Background/UI"]
+script = ExtResource("4_ryrav")
+max_lives = null
+icon_scale_multiplier = null
+
+[node name="HUD_Vite" type="Control" parent="Background/UI/CanvasLayer_HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBox_Icone" type="HBoxContainer" parent="Background/UI/CanvasLayer_HUD/HUD_Vite"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="SanPresenzio" parent="." instance=ExtResource("2_e2o6t")]
 light_mask = 2

@@ -1,12 +1,13 @@
 extends Area2D
 
-var FALL_SPEED = 200.0 + int(Global.raccattati / 10) + (Global.persi * 50)
 var rnd = RandomNumberGenerator.new()
 var collected := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rnd.randomize()
+	
+	Global.FALL_SPEED = 200.0 + int(Global.raccattati / 10) + (Global.persi * 50)
 
 	var screen_size = get_viewport_rect().size
 	var r = rnd.randi_range(1, 5)
@@ -23,12 +24,13 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	# Fa cadere il monitor
-	position.y += FALL_SPEED * delta
+	position.y += Global.FALL_SPEED * delta
 	
 	# Il monitor non è stato raccattato
 	if position.y > get_viewport_rect().size.y - 100:
 		collected = true   # BLOCCA I FRAME SUCCESSIVI
 		Global.persi += 1
+		Global.lives -= 1
 		$AudioMonitorPerso.play()
 		await $AudioMonitorPerso.finished
 		queue_free()
@@ -42,6 +44,7 @@ func _on_body_entered(body: Node2D) -> void:
 	collected = true
 	$AudioMonitorRaccattato.play()
 	Global.raccattati += 1
+	Global.score += int(Global.FALL_SPEED / 20)
 	
 	await $AudioMonitorRaccattato.finished
 	queue_free()

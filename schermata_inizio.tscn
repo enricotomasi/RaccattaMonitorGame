@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj28u76rs8el6"]
+
+[ext_resource type="Script" uid="uid://dljm2tm511k0q" path="res://schermata_inizio.gd" id="1_v0n76"]
+[ext_resource type="Texture2D" uid="uid://dbn80qej88bvd" path="res://sprites/schermata_iniziale.png" id="2_ms4qj"]
+[ext_resource type="FontFile" uid="uid://dmctpt5btb7r3" path="res://fonts/Azonix.otf" id="4_pum7n"]
+
+[sub_resource type="GDScript" id="GDScript_ms4qj"]
+script/source = "extends Control
+
+func _unhandled_input(event: InputEvent) -> void:
+	# Se il giocatore preme un qualsiasi tasto o il mouse
+	if event.is_pressed():
+		# Cambia scena e apre il gioco vero e proprio!
+		# (Sostituisci \"Livello1.tscn\" con il nome esatto della tua scena di gioco)
+		get_tree().change_scene_to_file(\"res://game.tscn\")
+"
+
+[node name="SchermataInizio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0n76")
+
+[node name="SchermataIniziale" type="Sprite2D" parent="."]
+position = Vector2(600, 319)
+scale = Vector2(0.7796224, 0.71240234)
+texture = ExtResource("2_ms4qj")
+
+[node name="PressAnyKeyToStart" type="Label" parent="."]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 587.0
+offset_right = 885.0
+offset_bottom = 626.0
+theme_override_colors/font_color = Color(0, 0.023529412, 0.023529412, 1)
+theme_override_font_sizes/font_size = 28
+text = "Click or touch everywhere to start"
+uppercase = true
+script = SubResource("GDScript_ms4qj")
+
+[node name="Istruzioni" type="Label" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 189.0
+offset_right = 925.0
+offset_bottom = 496.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "--- HOW TO PLAY ---
+
+[ A / D ] or [ ← / → ]  [TOUCH]  :  Move Left / Right
+
+🎯 OBJECTIVE:
+Catch falling monitors with your umbrella to get promoted!
+Climb from \"7° livello\" to top executive!
+
+⚠️ WARNING:
+Don't let them smash on the ground. Too many misses = FIRED!"
+horizontal_alignment = 1
+
+[node name="RaccattaMonitor" type="Label" parent="."]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 53.0
+offset_right = 953.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_pum7n")
+theme_override_font_sizes/font_size = 62
+text = "RaccattaMonitor"
