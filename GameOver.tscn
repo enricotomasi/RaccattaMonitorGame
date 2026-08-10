@@ -25,17 +25,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v0n76")
 
-[node name="SchermataIniziale" type="Sprite2D" parent="."]
+[node name="GameOver" type="Sprite2D" parent="."]
 position = Vector2(600, 319)
 scale = Vector2(0.7796224, 0.71240234)
 texture = ExtResource("2_ms4qj")
 
 [node name="PressAnyKeyToStart" type="Label" parent="."]
 layout_mode = 0
-offset_left = 311.0
-offset_top = 587.0
-offset_right = 958.0
-offset_bottom = 626.0
+offset_left = 298.0
+offset_top = 586.0
+offset_right = 945.0
+offset_bottom = 625.0
 theme_override_colors/font_color = Color(0, 0.023529412, 0.023529412, 1)
 theme_override_font_sizes/font_size = 28
 text = "Click or touch everywhere to start again"
