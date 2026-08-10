@@ -51,13 +51,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "--- HOW TO PLAY ---
 
-[ A / D ] or [ ← / → ]  [TOUCH]  :  Move Left / Right
+[ A / D ] or [ arrows ]  [TOUCH]  :  Move Left / Right
 
-🎯 OBJECTIVE:
+- OBJECTIVE:
 Catch falling monitors with your umbrella to get promoted!
-Climb from \"7° livello\" to top executive!
+Climb from \"7 livello\" to top executive!
 
-⚠️ WARNING:
+-  WARNING:
 Don't let them smash on the ground. Too many misses = FIRED!"
 horizontal_alignment = 1
 
